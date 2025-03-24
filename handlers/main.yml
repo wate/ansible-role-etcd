@@ -1,0 +1,10 @@
+# code: language=ansible
+---
+# - name: Restart etcd
+#   ansible.builtin.systemd_service:
+#     state: restarted
+#     name: etcd
+# - name: Reload etcd
+#   ansible.builtin.systemd_service:
+#     state: reloaded
+#     name: etcd

@@ -1,0 +1,12 @@
+---
+etcd_dependency_packages: []
+
+# etcd_apt_key_url: https://packages.repository.com/etcd.gpg.key
+# etcd_apt_key_download_dest: /etc/apt/keyrings/etcd.gpg.key
+# etcd_apt_key_dest: /etc/apt/keyrings/etcd.gpg
+
+# etcd_repo: owner_name/repo_name
+
+etcd_home: /opt/etcd
+etcd_user: etcd
+etcd_group: etcd

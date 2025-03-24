@@ -1,0 +1,16 @@
+# code: language=ansible
+---
+# - name: Create/update setting file
+#   ansible.builtin.template:
+#     src: etcd.conf.j2
+#     dest: /erc/etcd/etcd.conf
+#     mode: "0644"
+# - name: Add/update option setting
+#   ansible.builtin.lineinfile:
+#     path: /etc/etcd/etcd.conf
+#     regexp: ^(#\\s+)?option_name=
+#     line: option_name=option_value
+# - name: Add/update custom setting
+#   ansible.builtin.blockinfile:
+#     path: /etc/etcd/etcd.conf
+#     block: "{{ etcd_extra_cfg | default('') }}"
