@@ -1,10 +1,10 @@
 ---
 galaxy_info:
   role_name: etcd
-  author: your name
-  description: Setup etcd(work in progress)
+  author: yoshiaki tanaka
+  description: Setup etcd
   license: Apache
-  min_ansible_version: "2.16"
+  min_ansible_version: "2.18"
   platforms:
     - name: Debian
       versions:

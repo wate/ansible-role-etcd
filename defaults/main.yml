@@ -1,10 +1,42 @@
 ---
 ## -----------------
-## インストールするバージョン
-## -----------------
-etcd_version: latest
-
-## -----------------
 ## インストールするパッケージ
 ## -----------------
-etcd_packages: []
+etcd_packages:
+  - etcd-server
+  - etcd-client
+  - etcd-discovery
+
+## -----------------
+## etcdのクライアントポート
+## @see https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt
+## -----------------
+etcd_client_port: 2379
+
+## -----------------
+## etcdのサーバーポート
+## @see https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt
+## -----------------
+etcd_server_port: 2380
+
+## -----------------
+## etcdの設定
+## @see https://etcd.io/docs/v3.5/op-guide/configuration/
+## -----------------
+etcd_envs:
+  ETCD_NAME: "{{ inventory_hostname }}"
+
+
+## -----------------
+## クライアントポートへの接続を許可するIPアドレス
+## -----------------
+# etcd_allow_connect_other_host: 10.0.0.0/8
+# etcd_allow_connect_other_host: 172.16.0.0/12
+# etcd_allow_connect_other_host: 192.168.0.0/16
+
+## -----------------
+## サーバーポートへの接続を許可するIPアドレス
+## -----------------
+# etcd_allow_connect_server_other_host: 10.0.0.0/8
+# etcd_allow_connect_server_other_host: 172.16.0.0/12
+# etcd_allow_connect_server_other_host: 192.168.0.0/16

@@ -1,17 +1,18 @@
 # code: language=ansible
 ---
-- name: Create/update systemd unit file
-  ansible.builtin.template:
-    src: etcd.service.j2
-    dest: /lib/systemd/system/etcd.service
-    mode: "0644"
-  notify: restart etcd
 - name: Service etcd is active and enabled on system startup
   ansible.builtin.systemd_service:
     name: etcd
     state: started
     enabled: true
-# - name: allow etcd port
-#   community.general.ufw:
-#     rule: allow
-#     port: "123456"
+- name: Allow etcd client port
+  community.general.ufw:
+    rule: allow
+    port: "{{ etcd_client_port }}"
+    from_ip: "{{ etcd_allow_connect_other_host | default('any') }}"
+  when: etcd_allow_connect_other_host is defined
+- name: Allow etcd server port
+  community.general.ufw:
+    rule: allow
+    port: "{{ etcd_allow_connect_server_port.from_ip | default('any') }}"
+  when: etcd_allow_client_port_other_host.from_ip is defined
