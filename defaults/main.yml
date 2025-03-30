@@ -20,7 +20,7 @@ etcd_client_port: 2379
 etcd_server_port: 2380
 
 ## -----------------
-## etcdの設定
+## etcdの環境変数の設定
 ## @see https://etcd.io/docs/v3.5/op-guide/configuration/
 ## -----------------
 etcd_envs:

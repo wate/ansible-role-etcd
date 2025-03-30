@@ -1,7 +1,7 @@
 etcd
 =================
 
-Setup etcd(work in progress)
+Setup etcd
 
 OS Platform
 -----------------
@@ -22,17 +22,20 @@ Role Variables
 
 インストールするパッケージ
 
-### [vars/main.yml](vars/main.yml)
+#### `etcd_client_port`
 
-設定値については[vars/main.yml](vars/main.yml)を参照してください。
+etcdのクライアントポート  
+@see https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt
 
-#### `etcd_dependency_packages`
+#### `etcd_server_port`
 
-#### `etcd_home`
+etcdのサーバーポート  
+@see https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt
 
-#### `etcd_user`
+#### `etcd_envs`
 
-#### `etcd_group`
+etcdの環境変数の設定  
+@see https://etcd.io/docs/v3.5/op-guide/configuration/
 
 Example Playbook
 --------------
